@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Apple iPhone 14 Pro",
+        "description": "128GB storage, deep purple color, excellent condition.",
+        "currentBidPrice": 750,
+        "timeLeft": "2h 30m",
+        "bidsCount": 12,
+        "image": "https://dazzle.com.bd/_next/image?url=https%3A%2F%2Fdazzle.sgp1.cdn.digitaloceanspaces.com%2F70073%2FiPhone-14-pro-max-Price-in-bangladesh-Gold.webp&w=640&q=75"
+    },
+    {
+        "id": 2,
+        "title": "Samsung Galaxy S23",
+        "description": "256GB storage, phantom black, almost new.",
+        "currentBidPrice": 620,
+        "timeLeft": "4h 15m",
+        "bidsCount": 9,
+        "image": "https://mobilebuzzbd.com/wp-content/uploads/2023/07/Samsung-Galaxy-S23-5G-Lavender.webp"
+    },
+    {
+        "id": 3,
+        "title": "Sony WH-1000XM5 Headphones",
+        "description": "Industry leading noise cancelling wireless headphones.",
+        "currentBidPrice": 210,
+        "timeLeft": "1h 50m",
+        "bidsCount": 7,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3_i64H50nh1cnFsQdYbXlCABuOICmNV5bg&s"
+    },
+    {
+        "id": 4,
+        "title": "Apple MacBook Air M2",
+        "description": "13-inch, 8GB RAM, 256GB SSD, space gray.",
+        "currentBidPrice": 980,
+        "timeLeft": "6h 10m",
+        "bidsCount": 15,
+        "image": "https://www.pchouse.com.bd/image/cache/catalog/laptop/Apple/Macbook/apple-macbook-air-m2-space-gray-4-500x500.png"
+    },
+    {
+        "id": 5,
+        "title": "Canon EOS M50 Camera",
+        "description": "Mirrorless camera with 15-45mm lens, perfect for vlogging.",
+        "currentBidPrice": 480,
+        "timeLeft": "3h 20m",
+        "bidsCount": 11,
+        "image": "https://www.startech.com.bd/image/cache/catalog/camera/mirriorless/canon/eos-m50-mark-ii/eos-m50-mark-ii-01-500x500.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Apple Watch Series 8",
+        "description": "45mm GPS model, midnight aluminum case.",
+        "currentBidPrice": 320,
+        "timeLeft": "5h 05m",
+        "bidsCount": 6,
+        "image": "https://www.custommacbd.com/cdn/shop/products/Apple-watch-Series-8-Slate-Blue-Custom-Mac-BD.jpg?v=1685339631"
+    },
+    {
+        "id": 7,
+        "title": "Dell XPS 13 Laptop",
+        "description": "Intel i7, 16GB RAM, 512GB SSD, ultra thin design.",
+        "currentBidPrice": 870,
+        "timeLeft": "7h 40m",
+        "bidsCount": 13,
+        "image": "https://www.perennial.com.bd/image/cache/catalog/laptop/dell/dell-xps-13-9310/1-500x500.jpg"
+    },
+    {
+        "id": 8,
+        "title": "PlayStation 5 Console",
+        "description": "Sony PS5 with one wireless controller.",
+        "currentBidPrice": 540,
+        "timeLeft": "2h 10m",
+        "bidsCount": 18,
+        "image": "https://cdn.media.amplience.net/i/currysprod/10292177_005?$l-large$&fmt=auto"
+    },
+    {
+        "id": 9,
+        "title": "GoPro Hero 11",
+        "description": "Action camera with 5.3K video and waterproof design.",
+        "currentBidPrice": 360,
+        "timeLeft": "4h 50m",
+        "bidsCount": 10,
+        "image": "https://www.pchouse.com.bd/image/cache/catalog/GoPro%20Hero%2011/GoPro%20Hero%2011-500x500.jpg"
+    },
+    {
+        "id": 10,
+        "title": "iPad Pro 11-inch",
+        "description": "128GB WiFi model with Liquid Retina display.",
+        "currentBidPrice": 610,
+        "timeLeft": "3h 35m",
+        "bidsCount": 8,
+        "image": "https://media.gadgetandgear.com/upload/product/20210609_1623227311_349870.jpeg"
+    }
+]
