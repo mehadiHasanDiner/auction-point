@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [addToFavorite, setAddToFavorite] = useState([]);
+
   const handleAddToFavorite = (productData) => {
     const newAddToFavorite = [...addToFavorite, productData];
     setAddToFavorite(newAddToFavorite);
