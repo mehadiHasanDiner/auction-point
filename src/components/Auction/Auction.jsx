@@ -27,7 +27,7 @@ const Auction = ({ dataPromise, handleAddToFavorite }) => {
                 <td className="border-gray-300">$ {product.currentBidPrice}</td>
                 <td className="border-gray-300">{product.timeLeft}</td>
                 <td className="border-gray-300 text-center">
-                  <button onClick={(e) => handleAddToFavorite(product)}>
+                  <button onClick={() => handleAddToFavorite(product)}>
                     <FaRegHeart className="hover:text-xl" />
                   </button>
                 </td>
