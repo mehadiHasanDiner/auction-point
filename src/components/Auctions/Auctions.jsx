@@ -1,23 +1,33 @@
-import React, { Suspense } from "react";
-import Auction from "../Auction/Auction";
+import React, { use } from "react";
+import AuctionTable from "../Auction/AuctionTable";
 
-const dataPromise = fetch("data.json").then((res) => res.json());
-const Auctions = ({ handleAddToFavorite, isClicked }) => {
+const Auctions = ({ handleAddToFavorite, productsData }) => {
   return (
     <div className="col-span-2 space-y-3">
       <h2 className="text-2xl">Active Auctions</h2>
       <p className="text-sm">Discover and bid on extraordinary items</p>
-      <Suspense
-        fallback={
-          <p className="font-bold text-center">Product data is loading</p>
-        }
-      >
-        <Auction
-          dataPromise={dataPromise}
-          handleAddToFavorite={handleAddToFavorite}
-          isClicked={isClicked}
-        ></Auction>
-      </Suspense>
+      <div>
+        <div className="overflow-x-auto rounded-box border border-gray-300 bg-base-100">
+          <table className="table rounded-6xl">
+            {/* head */}
+            <thead>
+              <tr>
+                <th className="border-gray-300">Items</th>
+                <th className="border-gray-300">Current Bid </th>
+                <th className="border-gray-300">Time Left </th>
+                <th className="border-gray-300">Bid Now </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {productsData.map((product) => (
+                <AuctionTable product={product}></AuctionTable>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div></div>
     </div>
   );

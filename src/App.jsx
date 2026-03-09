@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, use, useState } from "react";
 import "./App.css";
 import Auctions from "./components/Auctions/Auctions";
 import Banner from "./components/Banner/Banner";
@@ -6,9 +6,12 @@ import Favorites from "./components/Favorites/Favorites";
 import Navbar from "./components/Navbar/Navbar";
 import { toast } from "react-toastify";
 
+const dataPromise = fetch("data.json").then((res) => res.json());
+
 function App() {
   const [addToFavorite, setAddToFavorite] = useState([]);
-  const [isClicked, setIsClicked] = useState(false);
+
+  const productsData = use(dataPromise);
 
   const handleAddToFavorite = (productData) => {
     const newAddToFavorite = [...addToFavorite, productData];
@@ -25,10 +28,16 @@ function App() {
           <Banner />
         </div>
         <div className="w-10/12 mx-auto grid grid-cols-3 gap-5">
-          <Auctions
-            handleAddToFavorite={handleAddToFavorite}
-            isClicked={isClicked}
-          />
+          <Suspense
+            fallback={
+              <p className="font-bold text-center">Product data is loading</p>
+            }
+          >
+            <Auctions
+              productsData={productsData}
+              handleAddToFavorite={handleAddToFavorite}
+            />
+          </Suspense>
           <Favorites />
         </div>
       </div>
