@@ -1,7 +1,9 @@
 import React, { use } from "react";
 import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
-const AuctionTable = ({ product, handleAddToFavorite }) => {
+const AuctionTable = ({ product, handleAddToFavorite, myFavorites }) => {
+  const isFavorite = myFavorites.find((item) => item.id === product.id);
   return (
     <tr key={product.id}>
       <td className="border-gray-300">
@@ -11,8 +13,16 @@ const AuctionTable = ({ product, handleAddToFavorite }) => {
       <td className="border-gray-300">$ {product.currentBidPrice}</td>
       <td className="border-gray-300">{product.timeLeft}</td>
       <td className="border-gray-300 text-center">
-        <button onClick={() => handleAddToFavorite(product)}>
-          <FaRegHeart className="hover:text-xl" />
+        <button
+          onClick={() => handleAddToFavorite(product.id)}
+          disabled={isFavorite}
+        >
+          {/*  */}
+          {isFavorite ? (
+            <FaHeart color="red" className="" />
+          ) : (
+            <FaRegHeart className="hover:text-xl" />
+          )}
         </button>
       </td>
     </tr>

@@ -1,4 +1,4 @@
-import { Suspense, use, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Auctions from "./components/Auctions/Auctions";
 import Banner from "./components/Banner/Banner";
@@ -6,17 +6,22 @@ import Favorites from "./components/Favorites/Favorites";
 import Navbar from "./components/Navbar/Navbar";
 import { toast } from "react-toastify";
 
-const dataPromise = fetch("data.json").then((res) => res.json());
-
 function App() {
-  const [addToFavorite, setAddToFavorite] = useState([]);
+  const [productsData, setProductsData] = useState([]);
+  const [myFavorites, setMyFavorites] = useState([]);
 
-  const productsData = use(dataPromise);
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => setProductsData(data));
+  }, []);
 
-  const handleAddToFavorite = (productData) => {
-    const newAddToFavorite = [...addToFavorite, productData];
-    setAddToFavorite(newAddToFavorite);
-    toast("🛒 Product added to Favorite 👌");
+  const handleAddToFavorite = (id) => {
+    const getFavorites = productsData.find((product) => product.id === id);
+    setMyFavorites([...myFavorites, getFavorites]);
+
+    toast("🛒 Product Successfully added 👌");
+    console.log(myFavorites);
   };
   return (
     <>
@@ -28,17 +33,13 @@ function App() {
           <Banner />
         </div>
         <div className="w-10/12 mx-auto grid grid-cols-3 gap-5">
-          <Suspense
-            fallback={
-              <p className="font-bold text-center">Product data is loading</p>
-            }
-          >
-            <Auctions
-              productsData={productsData}
-              handleAddToFavorite={handleAddToFavorite}
-            />
-          </Suspense>
-          <Favorites />
+          <Auctions
+            productsData={productsData}
+            handleAddToFavorite={handleAddToFavorite}
+            myFavorites={myFavorites}
+          />
+
+          <Favorites myFavorites={myFavorites} />
         </div>
       </div>
     </>

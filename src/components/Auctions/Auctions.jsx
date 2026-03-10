@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import AuctionTable from "../Auction/AuctionTable";
 
-const Auctions = ({ handleAddToFavorite, productsData }) => {
+const Auctions = ({ handleAddToFavorite, productsData, myFavorites }) => {
   return (
     <div className="col-span-2 space-y-3">
       <h2 className="text-2xl">Active Auctions</h2>
@@ -21,7 +21,12 @@ const Auctions = ({ handleAddToFavorite, productsData }) => {
 
             <tbody>
               {productsData.map((product) => (
-                <AuctionTable product={product}></AuctionTable>
+                <AuctionTable
+                  key={product.id}
+                  product={product}
+                  handleAddToFavorite={handleAddToFavorite}
+                  myFavorites={myFavorites}
+                ></AuctionTable>
               ))}
             </tbody>
           </table>

@@ -1,7 +1,8 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 
-const Favorites = () => {
+const Favorites = ({ myFavorite }) => {
+  // console.log(myFavorite);
   return (
     <div className="">
       <p className="mt-10">Favorites</p>
