@@ -10,18 +10,18 @@ const AuctionTable = ({ product, handleAddToFavorite, myFavorites }) => {
         <img className="w-15 inline " src={product.image} alt="" />
         <span className="ml-5">{product.title}</span>
       </td>
-      <td className="border-gray-300">$ {product.currentBidPrice}</td>
+      <td className="border-gray-300">${product.currentBidPrice}</td>
       <td className="border-gray-300">{product.timeLeft}</td>
       <td className="border-gray-300 text-center">
         <button
+          className={isFavorite ? "cursor-not-allowed" : "cursor-pointer"}
           onClick={() => handleAddToFavorite(product.id)}
           disabled={isFavorite}
         >
-          {/*  */}
           {isFavorite ? (
-            <FaHeart color="red" className="" />
+            <FaHeart color="red" className="text-lg" />
           ) : (
-            <FaRegHeart className="hover:text-xl" />
+            <FaRegHeart className="hover:text-lg" />
           )}
         </button>
       </td>

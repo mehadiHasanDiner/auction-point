@@ -5,6 +5,7 @@ import Banner from "./components/Banner/Banner";
 import Favorites from "./components/Favorites/Favorites";
 import Navbar from "./components/Navbar/Navbar";
 import { toast } from "react-toastify";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [productsData, setProductsData] = useState([]);
@@ -21,7 +22,11 @@ function App() {
     setMyFavorites([...myFavorites, getFavorites]);
 
     toast("🛒 Product Successfully added 👌");
-    console.log(myFavorites);
+  };
+
+  const handleRemoveFromFav = (id) => {
+    const remainingFav = myFavorites.filter((fav) => fav.id !== id);
+    setMyFavorites(remainingFav);
   };
   return (
     <>
@@ -39,8 +44,12 @@ function App() {
             myFavorites={myFavorites}
           />
 
-          <Favorites myFavorites={myFavorites} />
+          <Favorites
+            myFavorites={myFavorites}
+            handleRemoveFromFav={handleRemoveFromFav}
+          />
         </div>
+        <Footer />
       </div>
     </>
   );

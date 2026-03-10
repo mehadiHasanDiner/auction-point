@@ -4,8 +4,10 @@ import AuctionTable from "../Auction/AuctionTable";
 const Auctions = ({ handleAddToFavorite, productsData, myFavorites }) => {
   return (
     <div className="col-span-2 space-y-3">
-      <h2 className="text-2xl">Active Auctions</h2>
-      <p className="text-sm">Discover and bid on extraordinary items</p>
+      <h2 className="text-2xl font-bold">Active Auctions</h2>
+      <p className="text-sm text-gray-500">
+        Discover and bid on extraordinary items
+      </p>
       <div>
         <div className="overflow-x-auto rounded-box border border-gray-300 bg-base-100">
           <table className="table rounded-6xl">
@@ -32,8 +34,6 @@ const Auctions = ({ handleAddToFavorite, productsData, myFavorites }) => {
           </table>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 };
